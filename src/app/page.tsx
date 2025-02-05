@@ -13,7 +13,7 @@ export default function Home() {
             Beautifully designed components <br className="hidden sm:inline" />
             built with Radix UI and & Tailwind CSS.
           </h1>
-          <p className="text-muted-foreground max-w-[700px] text-lg">
+          <p className="max-w-[700px] text-lg text-muted-foreground">
             Accessible and customizable components that you can copy and paste
             into your apps. Free. Open Source. And Next.js 13 Ready.
           </p>
@@ -31,7 +31,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             href={siteConfig.links.github}
-            className={buttonVariants({ variant: "outline" })}
+            className={buttonVariants({ variant: "default" })}
           >
             GitHub
           </Link>

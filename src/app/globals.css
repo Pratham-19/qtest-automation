@@ -1,4 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@300,400,500,600,700,1&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=roboto@300,400,500,600,700,1&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,32 +6,79 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Base colors from Dell design system */
+    --background: 0 0% 100%; /* white #FFFFFF */
+    --foreground: 0 0% 15%; /* gray-900 #252525 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Primary - using dell-blue-500 */
+    --primary: 206 100% 41%; /* #0076CE */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - using gray-600 */
+    --secondary: 0 0% 38%; /* #616161 */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - using gray-100 */
+    --muted: 0 0% 96%; /* #F4F4F4 */
+    --muted-foreground: 0 0% 38%; /* gray-600 */
+
+    /* Accent - using dell-blue-100 */
+    --accent: 206 80% 95%; /* #EBF4FB */
+    --accent-foreground: 0 0% 15%;
+
+    /* Destructive - using red-500 */
+    --destructive: 0 100% 34%; /* #AF0000 */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border - using gray-200 */
+    --border: 0 0% 92%; /* #EAEAEA */
+
+    /* Input - using gray-500 */
+    --input: 0 0% 46%; /* #757575 */
+
+    /* Ring - using dell-blue-400 */
+    --ring: 205 65% 58%; /* #4C9FDD */
+
+    /* Chart colors */
+    --chart-1: 25 100% 46%; /* orange-500 #ED6400 */
+    --chart-2: 206 100% 41%; /* dell-blue-500 #0076CE */
+    --chart-3: 120 100% 26%; /* green-500 #1B8500 */
+    --chart-4: 48 100% 50%; /* yellow-500 #FFC700 */
+    --chart-5: 0 100% 34%; /* red-500 #AF0000 */
 
     --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -44,6 +91,6 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
-    font-family: "Clash Grotesk", sans-serif;
+    font-family: "Roboto", sans-serif;
   }
 }

@@ -1,8 +1,9 @@
-import "./globals.css";
+import "@/app/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { SidebarProvider } from "@/components/ui/sidebar";
 // import { TailwindIndicator } from "@/src/components/tailwind-indicator";
 
 export const metadata: Metadata = {
@@ -27,8 +28,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background min-h-screen font-sans antialiased",
-          fontSans.variable
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
         )}
       >
         {children}
