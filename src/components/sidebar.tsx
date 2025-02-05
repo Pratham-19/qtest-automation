@@ -14,15 +14,10 @@ import { Button } from "@/components/ui/button";
 import { Avatar as AvatarHead } from "@/components/ui/avatar";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import CustomConnectButton from "./connect-wallet";
-import { useAccount, useDisconnect } from "wagmi";
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(false);
   const [showText, setShowText] = useState(false);
-  const { address, isConnected } = useAccount();
-
-  const { disconnect } = useDisconnect();
 
   useEffect(() => {
     if (expanded) {
@@ -92,7 +87,7 @@ export default function Sidebar() {
                   damping: 25,
                 }}
               >
-                ZKML Auditor
+                ACNE
               </motion.div>
             )}
           </AnimatePresence>
@@ -158,10 +153,10 @@ export default function Sidebar() {
 
         {/* Bottom Profile/Wallet Section */}
         <div className="border-border/50 border-t p-4">
-          {isConnected ? (
+          {false ? (
             <div className="relative flex h-10 cursor-default items-center overflow-hidden rounded-lg">
               <AvatarHead className="absolute size-8 overflow-hidden rounded-lg border">
-                <Avatar name={address ?? ""} variant="beam" square />
+                <Avatar name={"name"} variant="beam" square />
               </AvatarHead>
               <AnimatePresence mode="wait">
                 {showText && (
@@ -177,13 +172,12 @@ export default function Sidebar() {
                         damping: 25,
                       }}
                     >
-                      {address?.slice(0, 6) + "..." + address?.slice(-4)}
+                      Jpnh
                     </motion.span>
 
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => disconnect()}
                       className="ml-2 h-8 w-auto rounded-lg px-3 text-red-500 transition-colors hover:bg-red-500/10 hover:text-red-500"
                     >
                       <LogOut className="size-4" />
@@ -211,7 +205,7 @@ export default function Sidebar() {
                       damping: 25,
                     }}
                   >
-                    <CustomConnectButton />
+                    hoho
                   </motion.span>
                 )}
               </AnimatePresence>
