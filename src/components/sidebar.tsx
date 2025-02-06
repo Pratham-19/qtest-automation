@@ -97,7 +97,7 @@ export default function Sidebar() {
 
   return (
     <motion.div
-      className="fixed inset-y-0 left-0 z-50 flex flex-col border-r border-white/10 bg-primary backdrop-blur-xl"
+      className="absolute inset-y-0 left-0 z-50 flex flex-col border-r border-white/10 bg-background backdrop-blur-xl"
       animate={{ width: expanded ? 280 : 70 }}
       transition={{
         type: "spring",
@@ -108,46 +108,6 @@ export default function Sidebar() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Logo */}
-      <div className="flex h-16 items-center border-b border-white/10 px-4">
-        <motion.div
-          className="flex items-center"
-          animate={{ x: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 25,
-          }}
-        >
-          <motion.div
-            className="flex items-center justify-center rounded-lg bg-gradient-to-tr from-blue-400/40 via-blue-300/30 to-white/20 p-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FlaskConical className="size-7 text-white" />
-          </motion.div>
-          <AnimatePresence mode="wait">
-            {showText && (
-              <motion.div
-                className="flex items-center"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 25,
-                }}
-              >
-                <span className="ml-3 text-lg font-semibold text-white">
-                  TestLabs
-                </span>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      </div>
-
       {/* Navigation */}
       <div className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
         {menuItems.map((item, index) => (
@@ -169,7 +129,7 @@ export default function Sidebar() {
                   damping: 25,
                 }}
               >
-                <item.icon className="size-5 text-white" />
+                <item.icon className="size-5 " />
               </motion.div>
               <AnimatePresence mode="wait">
                 {showText && (
@@ -185,10 +145,10 @@ export default function Sidebar() {
                       delay: index * 0.05,
                     }}
                   >
-                    <span className="ml-3 text-white">{item.label}</span>
+                    <span className="ml-3 ">{item.label}</span>
                     {item.subItems && (
                       <ChevronRight
-                        className={`size-4 text-white transition-transform duration-200
+                        className={`size-4  transition-transform duration-200
                           ${activeGroup === index ? "rotate-90" : ""}`}
                       />
                     )}
@@ -211,7 +171,7 @@ export default function Sidebar() {
                     <Link
                       key={subItem.label}
                       href={subItem.href}
-                      className="group mt-1 flex h-10 items-center rounded-lg py-2 pl-12 pr-3 text-white/80 transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                      className="group mt-1 flex h-10 items-center rounded-lg py-2 pl-12 pr-3 /80 transition-colors duration-200 hover:bg-white/10 hover:"
                     >
                       <subItem.icon className="mr-3 size-4" />
                       <span>{subItem.label}</span>

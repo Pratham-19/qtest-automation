@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { DashboardShell } from "@/components/dashboard-shell";
 // import { TailwindIndicator } from "@/src/components/tailwind-indicator";
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable,
         )}
       >
-        {children}
+        <DashboardShell>{children}</DashboardShell>
         {/* <TailwindIndicator /> */}
       </body>
     </html>
